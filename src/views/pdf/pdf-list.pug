@@ -1,0 +1,15 @@
+extends ../layouts/layout
+block main-content
+  .container 
+  table.custom-table 
+    thead
+      tr
+        th Id
+        th Nombre
+        th Link
+    tbody 
+      each item, index in data
+        tr
+          td=item.id
+          td=item.name
+          td=item.url
