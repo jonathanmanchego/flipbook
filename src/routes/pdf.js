@@ -13,6 +13,11 @@ router.get('/', (req, res) => {
       name: 'Evaluación de personal',
       url: 'https://drive.google.com/file/d/1WWzxzyyuo6CTXuOhUjhIR_9mOAUq1EW8/view?usp=sharing',
     },
+    {
+      id: 2,
+      name: 'Evaluación de papas',
+      url: 'https://drive.google.com/file/d/1WWzxzyyuo6CTXuOhUjhIR_9mOAUq1EW8/view?usp=sharing',
+    },
   ];
 
   res.render(templates.list, {
