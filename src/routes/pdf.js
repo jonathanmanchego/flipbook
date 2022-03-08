@@ -26,4 +26,20 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/create/', (req, res) => {
+  res.render(templates.create, {
+    title: 'PDF Crear',
+  });
+});
+
+router.post('/create/', (req, res) => {
+  res.json({
+    error: false,
+    data: {
+      id: 1,
+      name: 'nada',
+    },
+  });
+});
+
 module.exports = router;
