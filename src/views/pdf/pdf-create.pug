@@ -1,12 +1,12 @@
 extends ../layouts/layout
 block main-content
-  <form>
-    <div class="form-group">
-      <label for="Name">Example textarea</label>
-      <textarea class="form-control" id="Name" rows="3"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlFile1">Example file input</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
-  </form>
+  form
+    div.form-group
+      label(for="Name") Nombre
+      input(type="text", name="nameN").form-control#Name
+
+    div.form-group
+      label(for="nameFile") Seleccionar archivo
+      input(type="file", name="nameFile").form-control-file
+   
+  
