@@ -30,12 +30,7 @@ module.exports = {
     });
   },
   storePdf: (req, res) => {
-    res.json({
-      error: false,
-      data: {
-        id: 1,
-        name: 'nada',
-      },
-    });
+    console.log(req);
+    res.redirect('/pdf/');
   },
 };

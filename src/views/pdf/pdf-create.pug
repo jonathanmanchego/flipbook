@@ -2,7 +2,7 @@ extends ../layouts/layout
 block main-content
   div.form_global
    div.form_global_center 
-    form
+    form(action="/pdf/create" method="POST" enctype="multipart/form-data")
       h1.form__title Introducir Documento
       div.form-group.container--flex
         label(for="name").form__label Nombre
