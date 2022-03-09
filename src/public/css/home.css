@@ -15,3 +15,39 @@
 
 
 /*formularios*/
+
+.form_global {
+    margin: 0;
+    font-family: sans-serif;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form_global_center {
+    width: 95%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+}
+
+.form__title {
+    margin-top: 0;
+    font-size: 1.7;
+    text-align: center;
+}
+
+.form__label,
+.form__input {
+    display: block;
+}
+
+.form__label {
+    width: 30%;
+}
+
+.form__input {
+    width: 70%;
+}

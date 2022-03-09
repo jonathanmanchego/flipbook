@@ -1,32 +1,32 @@
 {
-  "name": "maganize_node",
-  "version": "1.0.0",
-  "description": "Back of magazine software",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "lint": "eslint '*/**/*.js' --quiet --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jonathanmanchego/flipbook.git"
-  },
-  "author": "Jonathan Manchego Sosa, Carolina Carlotto Vilca",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jonathanmanchego/flipbook/issues"
-  },
-  "homepage": "https://github.com/jonathanmanchego/flipbook#readme",
-  "dependencies": {
-    "express": "^4.17.3",
-    "pug": "^3.0.2"
-  },
-  "devDependencies": {
-    "eslint": "^8.10.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
-  }
+    "name": "maganize_node",
+    "version": "1.0.0",
+    "description": "Back of magazine software",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "lint": "eslint '*/**/*.js' --quiet --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonathanmanchego/flipbook.git"
+    },
+    "author": "Jonathan Manchego Sosa, Carolina Carlotto Vilca",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jonathanmanchego/flipbook/issues"
+    },
+    "homepage": "https://github.com/jonathanmanchego/flipbook#readme",
+    "dependencies": {
+        "express": "^4.17.3",
+        "pug": "^3.0.2"
+    },
+    "devDependencies": {
+        "eslint": "^8.10.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.5.1"
+    }
 }
