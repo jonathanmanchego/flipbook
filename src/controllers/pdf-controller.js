@@ -1,3 +1,5 @@
+const { Pdf } = require('../../models');
+
 const templates = {
   list: 'pdf/pdf-list',
   create: 'pdf/pdf-create',
@@ -5,20 +7,13 @@ const templates = {
 };
 
 module.exports = {
-  listPdf: (req, res) => {
-    const data = [
-      {
-        id: 1,
-        name: 'Evaluación de personal',
-        url: 'https://drive.google.com/file/d/1WWzxzyyuo6CTXuOhUjhIR_9mOAUq1EW8/view?usp=sharing',
-      },
-      {
-        id: 2,
-        name: 'Evaluación de papas',
-        url: 'https://drive.google.com/file/d/1WWzxzyyuo6CTXuOhUjhIR_9mOAUq1EW8/view?usp=sharing',
-      },
-    ];
-
+  listPdf: async (req, res) => {
+    let data = [];
+    try {
+      data = await Pdf.findAll();
+    } catch (e) {
+      console.error(e);
+    }
     res.render(templates.list, {
       title: 'PDF Listado',
       data,
@@ -29,8 +24,25 @@ module.exports = {
       title: 'PDF Crear',
     });
   },
-  storePdf: (req, res) => {
-    console.log(req);
+  storePdf: async (req, res) => {
+    if (!req.file) res.redirect('/pdf/create');
+
+    const { name } = req.body;
+    const { filename } = req.file;
+    const pdfToCreate = await Pdf.create({
+      name,
+      url: filename,
+    });
+    try {
+      await pdfToCreate.save();
+    } catch (e) {
+      console.error(e);
+      res.render(templates.create, {
+        title: 'PDF Crear',
+        error: true,
+      });
+    }
+
     res.redirect('/pdf/');
   },
 };

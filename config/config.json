@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "magazine_development",
+    "database": "magazine_developer",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
