@@ -1,16 +1,21 @@
 extends ../layouts/layout
 block main-content
-  .container 
-  table.custom-table 
-    thead
-      tr
-        th Id
-        th Nombre
-        th Link
-    tbody 
-      each item, index in data
+  .container.d-flex.justify-content-center.align-items-center 
+    table.table.col-sm-10.col-md-8.col-lg-6.mx-auto
+      thead
         tr
-          td=item.id
-          td=item.name
-          td=item.url 
-          
+          th Id
+          th Nombre
+          th Link
+          th Acciones
+      tbody 
+        each item, index in data
+          tr
+            td=item.id
+            td=item.name
+            td=item.url 
+            td
+              .d-flex 
+                a.btn.btn-light(href=item.linkToFlipbook) Flipbook
+
+            

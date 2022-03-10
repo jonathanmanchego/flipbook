@@ -11,6 +11,13 @@ module.exports = {
     let data = [];
     try {
       data = await Pdf.findAll();
+      console.log(req);
+      data.map(pdf => ({
+        ...pdf,
+        linkToFlipbook: `https://heyzine.com/api1/rest?pdf=${
+          req.hostname + '' + pdf.url
+        }&k=6d290c3d4f7b6761`,
+      }));
     } catch (e) {
       console.error(e);
     }
