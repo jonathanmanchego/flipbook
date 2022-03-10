@@ -12,10 +12,12 @@ module.exports = {
     try {
       data = await Pdf.findAll();
       console.log(req);
-      data.map(pdf => ({
-        ...pdf,
+      data = data.map(pdf => ({
+        id: pdf.id,
+        name: pdf.name,
+        url: pdf.url,
         linkToFlipbook: `https://heyzine.com/api1/rest?pdf=${
-          req.hostname + '' + pdf.url
+          req.hostname + '/uploads/' + pdf.url
         }&k=6d290c3d4f7b6761`,
       }));
     } catch (e) {
