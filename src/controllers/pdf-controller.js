@@ -16,8 +16,8 @@ module.exports = {
         id: pdf.id,
         name: pdf.name,
         url: pdf.url,
-        linkToFlipbook: `https://heyzine.com/api1/rest?pdf=${
-          req.hostname + '/uploads/' + pdf.url
+        linkToFlipbook: `https://heyzine.com/api1?pdf=${
+          req.protocol + '://' + req.hostname + '/uploads/' + pdf.url
         }&k=6d290c3d4f7b6761`,
       }));
     } catch (e) {
@@ -38,6 +38,7 @@ module.exports = {
 
     const { name } = req.body;
     const { filename } = req.file;
+    console.log(req, res);
     const pdfToCreate = await Pdf.create({
       name,
       url: filename,
