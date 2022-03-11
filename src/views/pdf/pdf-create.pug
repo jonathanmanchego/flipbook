@@ -3,15 +3,15 @@ block main-content
   div.form_global
    div.form_global_center 
     form(action="/pdf/create" method="POST" enctype="multipart/form-data")
-      h1.form__title Introducir Documento
-      div.form-group.container--flex
+      h1.form__title Registrar pdf
+      div.form-group.container--flex.mb-3
         label(for="name").form__label Nombre
         input(type="text", name="name").form-control.form__input#Name
 
-      div.form-group.container--flex
+      div.form-group.container--flex.mb-3
         label(for="nameF").form__label Seleccionar archivo
         input(type="file", name="file").form-control.form_input#nameF
-
-      button(type="submit").btn.btn-primary Enviar
+      .col-12.pt-2
+        button(type="submit").w-100.btn.btn-primary Guardar
     
     

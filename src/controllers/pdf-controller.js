@@ -11,7 +11,6 @@ module.exports = {
     let data = [];
     try {
       data = await Pdf.findAll();
-      console.log(req);
       data = data.map(pdf => ({
         id: pdf.id,
         name: pdf.name,
@@ -38,13 +37,13 @@ module.exports = {
 
     const { name } = req.body;
     const { filename } = req.file;
-    console.log(req, res);
     const pdfToCreate = await Pdf.create({
       name,
       url: filename,
     });
     try {
       await pdfToCreate.save();
+      res.redirect('/pdf/');
     } catch (e) {
       console.error(e);
       res.render(templates.create, {
@@ -52,7 +51,19 @@ module.exports = {
         error: true,
       });
     }
-
-    res.redirect('/pdf/');
+  },
+  destroyPdf: async (req, res) => {
+    const { id } = req.params;
+    try {
+      await Pdf.destroy({
+        where: {
+          id,
+        },
+      });
+      res.redirect('/pdf/');
+    } catch (e) {
+      console.error(e);
+      res.redirect('/pdf/');
+    }
   },
 };

@@ -1,6 +1,8 @@
 extends ../layouts/layout
 block main-content
-  .container.d-flex.justify-content-center.align-items-center 
+  .d-flex.justify-content-center.align-items-center.flex-column 
+    .col-12
+      a.btn.btn-secondary.col-auto(href="/pdf/create") Nuevo pdf
     table.table.col-sm-10.col-md-8.col-lg-6.mx-auto
       thead
         tr
@@ -15,7 +17,8 @@ block main-content
             td=item.name
             td=item.url 
             td
-              .d-flex 
-                a.btn.btn-light(href=""+item.linkToFlipbook) Flipbook
+              .d-flex(style="gap: 15px")
+                a.btn.btn-light(href=""+item.linkToFlipbook target="_blank") Flipbook
+                a.btn.btn-danger(href="/pdf/"+item.id+"/delete" target="_blank") Eliminar
 
             
